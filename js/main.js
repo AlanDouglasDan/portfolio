@@ -339,44 +339,44 @@
 
 	// Fetching Medium Articles
 	// GET REQUEST
-	const myHeaders = new Headers();
-	myHeaders.append("Content-Type", "application/json");
-	const requestOptions = {
-		method: "get",
-		headers: myHeaders,
-		redirect: "follow",
-	};
+	// const myHeaders = new Headers();
+	// myHeaders.append("Content-Type", "application/json");
+	// const requestOptions = {
+	// 	method: "get",
+	// 	headers: myHeaders,
+	// 	redirect: "follow",
+	// };
 
-	window.onload(() => {
-
-
-		axios({
-			method: 'get',
-			url: 'https://v1.nocodeapi.com/unyime/medium/VLMopwXAxrYUMmul'
-		}, requestOptions)
-			.then(({ data }) => {
-
-				// However I do not want the HNG Internship Article
-				var newArray = data.filter(function (el) {
-					return el.created !== 1629120670000
-				}
-				);
-				// var swiperWrapper = document.getElementById('s-w')
-				{
-					newArray.map((content, i) => {
-						var swiperWrapper = $("#s-w");
-
-						var swiperSlide = $("<div></div>").addClass("swiper-slide").text(content.title);
-						swiperWrapper.append(swiperSlide);
-
-					})
-				}
-
-			})
-			.catch(error => console.error(error));
+	// window.onload(() => {
 
 
-	})
+	// 	axios({
+	// 		method: 'get',
+	// 		url: 'https://v1.nocodeapi.com/unyime/medium/VLMopwXAxrYUMmul'
+	// 	}, requestOptions)
+	// 		.then(({ data }) => {
+
+	// 			// However I do not want the HNG Internship Article
+	// 			var newArray = data.filter(function (el) {
+	// 				return el.created !== 1629120670000
+	// 			}
+	// 			);
+	// 			// var swiperWrapper = document.getElementById('s-w')
+	// 			{
+	// 				newArray.map((content, i) => {
+	// 					var swiperWrapper = $("#s-w");
+
+	// 					var swiperSlide = $("<div></div>").addClass("swiper-slide").text(content.title);
+	// 					swiperWrapper.append(swiperSlide);
+
+	// 				})
+	// 			}
+
+	// 		})
+	// 		.catch(error => console.error(error));
+
+
+	// })
 
 
 })(jQuery);
